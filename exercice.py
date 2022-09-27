@@ -61,7 +61,23 @@ def use_continue() -> None:
 
 
 def verify_ages(groups: List[List[int]]) -> List[bool]:
-    return []
+   rating=[]
+   for group in groups:
+       if len(group)>10 or len(group)<=3:
+           rating.append(False)
+           continue
+       if 25 in group:
+           rating.append(True)
+           continue
+       if min(group) < 18:
+           rating.append(False)
+           continue
+       if 50 in group and max(group)>70:
+           rating.append(False)
+           continue
+
+       rating.append(True)
+   return rating
 
 
 def main() -> None:
